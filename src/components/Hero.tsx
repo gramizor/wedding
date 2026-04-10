@@ -52,7 +52,7 @@ export function Hero() {
           <div className="mt-3 h-px w-16 bg-taupe/50 sm:mt-4 sm:w-20" />
 
           <p className="mt-3 font-serif text-lg tracking-[0.15em] text-text/80 sm:mt-4 sm:text-2xl">
-            11 августа 2026
+            {wedding.dateFormatted}
           </p>
         </div>
       </div>

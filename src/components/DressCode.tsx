@@ -1,8 +1,6 @@
 import { wedding } from "@/config/wedding";
 import { Divider } from "./decorative/Divider";
 
-const strokeImages = ["/first-colored.svg", "/second-colored.svg", "/third-colored.svg"];
-
 export function DressCode() {
   return (
     <section className="bg-ivory-dark px-6 py-20 sm:py-28">
@@ -17,9 +15,10 @@ export function DressCode() {
           {wedding.dresscode.colors.map((c, i) => (
             <div key={i} className="flex flex-col items-center">
               <img
-                src={strokeImages[i]}
+                src={c.stroke}
                 alt={c.name}
                 className="w-28 sm:w-36 drop-shadow-sm"
+                loading="lazy"
                 draggable={false}
               />
               <span className="mt-3 text-xs tracking-[0.15em] uppercase text-text/40">

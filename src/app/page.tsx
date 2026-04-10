@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { Timeline } from "@/components/Timeline";
 import { Locations } from "@/components/Locations";
+import { Atmosphere } from "@/components/Atmosphere";
 import { DressCode } from "@/components/DressCode";
 import { Wishes } from "@/components/Wishes";
 import { PhotoPolicy } from "@/components/PhotoPolicy";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Timeline />
         <Locations />
+        <Atmosphere />
         <DressCode />
         <Wishes />
         <PhotoPolicy />

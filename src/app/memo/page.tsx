@@ -2,8 +2,8 @@
 
 import { wedding } from "@/config/wedding";
 import { BotanicalWreath } from "@/components/decorative/BotanicalWreath";
-const strokeImages = ["/first-colored.svg", "/second-colored.svg", "/third-colored.svg"];
 import { TimelineIcon } from "@/components/decorative/TimelineIcon";
+
 
 export default function MemoPage() {
   return (
@@ -37,7 +37,7 @@ export default function MemoPage() {
               {wedding.couple.name2}
             </h1>
             <p className="mt-4 font-serif text-lg tracking-[0.15em] text-text/70">
-              11 августа 2026
+              {wedding.dateFormatted}
             </p>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function MemoPage() {
           <div className="flex items-center justify-center gap-6 mb-6">
             {wedding.dresscode.colors.map((c, i) => (
               <div key={i} className="flex flex-col items-center">
-                <img src={strokeImages[i]} alt={c.name} className="w-24" draggable={false} />
+                <img src={c.stroke} alt={c.name} className="w-24" draggable={false} />
                 <span className="mt-2 text-xs tracking-[0.15em] uppercase text-text/40">
                   {c.name}
                 </span>
@@ -130,17 +130,21 @@ export default function MemoPage() {
           <div className="h-px w-24 bg-taupe/50" />
         </div>
 
-        {/* Coordinator */}
+        {/* Contacts */}
         <div className="text-center mb-12">
           <h2 className="mb-4 font-script text-3xl text-burgundy">
-            Координатор
+            Наши помощники
           </h2>
-          <p className="font-serif text-lg text-text">
-            {wedding.coordinator.name}
-          </p>
-          <p className="mt-1 font-serif text-lg text-burgundy">
-            {wedding.coordinator.phone}
-          </p>
+          <div className="space-y-3">
+            {wedding.contacts.map((c, i) => (
+              <div key={i}>
+                <p className="font-serif text-lg text-text">
+                  {c.name} — <span className="text-text/50">{c.role}</span>
+                </p>
+                <p className="font-serif text-lg text-burgundy">{c.phone}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Footer */}

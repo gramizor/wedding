@@ -25,7 +25,7 @@ export function Footer() {
         </p>
 
         <p className="mt-3 font-serif text-base tracking-[0.15em] text-text/50">
-          11 августа 2026
+          {wedding.dateFormatted}
         </p>
 
         <div className="mt-6 h-px w-16 bg-taupe/40" />

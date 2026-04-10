@@ -57,6 +57,11 @@ export function Timeline() {
                     {event.address}
                   </p>
                 )}
+                {"hint" in event && event.hint && (
+                  <p className="mt-2 text-sm leading-relaxed text-text/45 italic">
+                    {event.hint}
+                  </p>
+                )}
               </div>
             </div>
           ))}
