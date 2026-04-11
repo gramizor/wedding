@@ -17,9 +17,10 @@ export function Coordinator() {
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {wedding.contacts.map((contact, i) => (
-            <div
+            <a
               key={i}
-              className="flex flex-col items-center rounded-2xl border border-taupe/30 bg-card px-8 py-6 shadow-sm"
+              href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}
+              className="flex flex-col items-center rounded-2xl border border-taupe/30 bg-card px-8 py-6 shadow-sm transition-colors hover:border-burgundy/30"
             >
               <p className="font-serif text-xl font-semibold text-text">
                 {contact.name}
@@ -27,13 +28,10 @@ export function Coordinator() {
               <p className="mt-1 text-sm text-text/40">
                 {contact.role}
               </p>
-              <a
-                href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}
-                className="mt-3 font-serif text-lg text-burgundy transition-colors hover:text-burgundy-dark"
-              >
+              <p className="mt-3 font-serif text-lg text-burgundy">
                 {contact.phone}
-              </a>
-            </div>
+              </p>
+            </a>
           ))}
         </div>
       </div>

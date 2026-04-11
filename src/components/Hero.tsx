@@ -29,13 +29,12 @@ export function Hero() {
   );
 
   return (
-    <section className="flex flex-col items-center overflow-hidden px-6 pt-16 pb-20 sm:pt-24">
-      {/* Wreath with text overlay */}
+    <section className="flex min-h-svh flex-col items-center justify-center overflow-hidden px-6">
       <div className="relative flex flex-col items-center justify-center">
-        <BotanicalWreath className="w-[340px] sm:w-[500px] md:w-[600px]" />
+        <BotanicalWreath className="w-[320px] sm:w-[480px] md:w-[560px]" />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-          <p className="mb-3 font-serif text-xs tracking-[0.3em] uppercase text-text/40 sm:mb-4 sm:text-sm">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <p className="mb-2 font-serif text-xs tracking-[0.3em] uppercase text-text/40 sm:mb-3 sm:text-sm">
             Свадьба
           </p>
 
@@ -45,20 +44,21 @@ export function Hero() {
             {wedding.couple.name2}
           </h1>
 
-          <p className="mt-4 max-w-sm font-serif text-base font-light italic text-text/60 sm:mt-6 sm:max-w-md sm:text-lg">
-            {wedding.couple.greeting}
+          <p className="mt-2 max-w-[220px] font-serif text-sm font-light italic leading-relaxed text-text/60 sm:mt-3 sm:max-w-xs sm:text-base">
+            Будем счастливы
+            <br />
+            разделить этот день с Вами
           </p>
 
-          <div className="mt-3 h-px w-16 bg-taupe/50 sm:mt-4 sm:w-20" />
+          <div className="mt-2 h-px w-12 bg-taupe/50 sm:mt-3 sm:w-16" />
 
-          <p className="mt-3 font-serif text-lg tracking-[0.15em] text-text/80 sm:mt-4 sm:text-2xl">
+          <p className="mt-2 font-serif text-base tracking-[0.15em] text-text/80 sm:mt-3 sm:text-xl">
             {wedding.dateFormatted}
           </p>
         </div>
       </div>
 
-      {/* Countdown — below the wreath */}
-      <div className="mt-8 flex items-start gap-1 sm:mt-10 sm:gap-5">
+      <div className="mt-6 flex items-start gap-1 sm:mt-8 sm:gap-5">
         {months > 0 && (
           <>
             <CountdownUnit value={months} label={countdownLabels(months, "month")} />

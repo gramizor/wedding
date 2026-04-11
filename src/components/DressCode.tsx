@@ -1,6 +1,8 @@
 import { wedding } from "@/config/wedding";
 import { Divider } from "./decorative/Divider";
 
+const fabricImages = ["/dark-red.png", "/black.png", "/milk.png"];
+
 export function DressCode() {
   return (
     <section className="bg-ivory-dark px-6 py-20 sm:py-28">
@@ -11,16 +13,18 @@ export function DressCode() {
         </h2>
         <Divider className="mb-12" />
 
-        <div className="fade-in flex items-center justify-center gap-4 sm:gap-8">
+        <div className="fade-in flex items-center justify-center gap-6 sm:gap-10">
           {wedding.dresscode.colors.map((c, i) => (
             <div key={i} className="flex flex-col items-center">
-              <img
-                src={c.stroke}
-                alt={c.name}
-                className="w-28 sm:w-36 drop-shadow-sm"
-                loading="lazy"
-                draggable={false}
-              />
+              <div className="size-20 overflow-hidden rounded-full border border-taupe/30 shadow-sm sm:size-24">
+                <img
+                  src={fabricImages[i]}
+                  alt={c.name}
+                  className="h-full w-full object-cover scale-110"
+                  loading="lazy"
+                  draggable={false}
+                />
+              </div>
               <span className="mt-3 text-xs tracking-[0.15em] uppercase text-text/40">
                 {c.name}
               </span>

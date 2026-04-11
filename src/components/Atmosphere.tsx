@@ -17,7 +17,7 @@ export function Atmosphere() {
 
         <div className="mx-auto my-8 h-px w-16 bg-taupe/40" />
 
-        <p className="fade-in font-serif text-base leading-relaxed text-text/60 italic">
+        <p className="fade-in font-serif text-lg leading-relaxed text-text/70 italic sm:text-xl">
           {wedding.atmosphere.format}
         </p>
       </div>

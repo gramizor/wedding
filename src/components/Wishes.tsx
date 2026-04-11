@@ -62,7 +62,14 @@ export function Wishes() {
               {wedding.wishes.greeting.text}
             </p>
             <p className="mt-3 text-sm text-text/40">
-              {wedding.wishes.greeting.contactNote}
+              {wedding.wishes.greeting.contactNote}:
+              {" "}
+              <a
+                href="tel:+79169074447"
+                className="text-burgundy hover:text-burgundy-dark transition-colors"
+              >
+                +7 (916) 907 44-47
+              </a>
             </p>
           </div>
 

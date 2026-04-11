@@ -68,9 +68,9 @@ export const wedding = {
 
   dresscode: {
     colors: [
-      { name: "Бордовый", hex: "#6E2230", stroke: "/first-colored.svg" },
-      { name: "Чёрный", hex: "#1E1A17", stroke: "/second-colored.svg" },
-      { name: "Белый", hex: "#FFFDF9", stroke: "/third-colored.svg" },
+      { name: "Бордовый", hex: "#6E2230", stroke: "/second.svg" },
+      { name: "Чёрный", hex: "#1E1A17", stroke: "/second.svg" },
+      { name: "Белый", hex: "#FFFDF9", stroke: "/second.svg" },
     ],
     text: "Для нас это важная часть атмосферы этого дня. Будем рады, если Вы почувствуете её и поддержите в своих образах.",
     note: "* белый цвет возможен в деталях, но просим избегать полностью белых образов",
