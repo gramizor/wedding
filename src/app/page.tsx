@@ -4,7 +4,6 @@ import { Locations } from "@/components/Locations";
 import { Atmosphere } from "@/components/Atmosphere";
 import { DressCode } from "@/components/DressCode";
 import { Wishes } from "@/components/Wishes";
-import { PhotoPolicy } from "@/components/PhotoPolicy";
 import { Coordinator } from "@/components/Coordinator";
 import { Gallery } from "@/components/Gallery";
 import { Footer } from "@/components/Footer";
@@ -21,7 +20,6 @@ export default function Home() {
         <Atmosphere />
         <DressCode />
         <Wishes />
-        <PhotoPolicy />
         <Coordinator />
         <Gallery />
         <Footer />
