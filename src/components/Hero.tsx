@@ -24,7 +24,7 @@ function CountdownSeparator() {
 }
 
 export function Hero() {
-  const { months, days, hours, minutes, seconds } = useCountdown(
+  const { months, days, hours, minutes, seconds, isComplete } = useCountdown(
     new Date(wedding.date)
   );
 
@@ -58,21 +58,39 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="mt-6 flex items-start gap-1 sm:mt-8 sm:gap-5">
-        {months > 0 && (
-          <>
-            <CountdownUnit value={months} label={countdownLabels(months, "month")} />
-            <CountdownSeparator />
-          </>
-        )}
-        <CountdownUnit value={days} label={countdownLabels(days, "day")} />
-        <CountdownSeparator />
-        <CountdownUnit value={hours} label={countdownLabels(hours, "hour")} />
-        <CountdownSeparator />
-        <CountdownUnit value={minutes} label={countdownLabels(minutes, "minute")} />
-        <CountdownSeparator />
-        <CountdownUnit value={seconds} label={countdownLabels(seconds, "second")} />
-      </div>
+      {isComplete ? (
+        <p className="mt-6 max-w-md text-center font-serif text-2xl font-light italic text-burgundy sm:mt-8 sm:text-3xl">
+          Поздравляем молодожёнов с праздником!
+        </p>
+      ) : (
+        <div className="mt-6 flex items-start gap-1 sm:mt-8 sm:gap-5">
+          {months > 0 && (
+            <>
+              <CountdownUnit
+                value={months}
+                label={countdownLabels(months, "month")}
+              />
+              <CountdownSeparator />
+            </>
+          )}
+          <CountdownUnit value={days} label={countdownLabels(days, "day")} />
+          <CountdownSeparator />
+          <CountdownUnit
+            value={hours}
+            label={countdownLabels(hours, "hour")}
+          />
+          <CountdownSeparator />
+          <CountdownUnit
+            value={minutes}
+            label={countdownLabels(minutes, "minute")}
+          />
+          <CountdownSeparator />
+          <CountdownUnit
+            value={seconds}
+            label={countdownLabels(seconds, "second")}
+          />
+        </div>
+      )}
     </section>
   );
 }

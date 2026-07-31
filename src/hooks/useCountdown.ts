@@ -1,14 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-
-interface CountdownValues {
-  months: number;
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
+import {
+  calculateCountdown,
+  type CountdownState,
+} from "@/lib/countdown";
 
 function pluralize(n: number, one: string, few: string, many: string): string {
   const abs = Math.abs(n) % 100;
@@ -30,42 +26,16 @@ export function countdownLabels(n: number, unit: "month" | "day" | "hour" | "min
   return pluralize(n, ...forms[unit]);
 }
 
-function calculate(targetDate: Date): CountdownValues {
-  const now = new Date();
-  if (now >= targetDate) {
-    return { months: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
-  }
-
-  // Count full months
-  let months = 0;
-  const cursor = new Date(now);
-  while (true) {
-    const next = new Date(cursor);
-    next.setMonth(next.getMonth() + 1);
-    if (next > targetDate) break;
-    cursor.setMonth(cursor.getMonth() + 1);
-    months++;
-  }
-
-  const remainderMs = targetDate.getTime() - cursor.getTime();
-  const days = Math.floor(remainderMs / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((remainderMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((remainderMs % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((remainderMs % (1000 * 60)) / 1000);
-
-  return { months, days, hours, minutes, seconds };
-}
-
-export function useCountdown(targetDate: Date): CountdownValues {
+export function useCountdown(targetDate: Date): CountdownState {
   const targetMs = useRef(targetDate.getTime());
-  const [countdown, setCountdown] = useState<CountdownValues>(() =>
-    calculate(targetDate)
+  const [countdown, setCountdown] = useState<CountdownState>(() =>
+    calculateCountdown(targetDate)
   );
 
   useEffect(() => {
     const target = new Date(targetMs.current);
     const interval = setInterval(() => {
-      setCountdown(calculate(target));
+      setCountdown(calculateCountdown(target));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
