@@ -2,6 +2,7 @@
 
 import { wedding } from "@/config/wedding";
 import { BotanicalWreath } from "./decorative/BotanicalWreath";
+import { CrystalMark } from "./decorative/CrystalMark";
 
 function DownloadIcon() {
   return (
@@ -45,6 +46,17 @@ export function Footer() {
         <p className="mt-2 text-xs text-text/30">
           на случай, если не будет интернета
         </p>
+
+        <a
+          href="https://gramizor.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-14 inline-flex items-center gap-2.5 text-xs text-text/30 transition-colors duration-200 hover:text-burgundy"
+        >
+          <span>Разработка сайта —</span>
+          <CrystalMark className="h-3.5 w-auto transition-colors duration-200 group-hover:text-[#e01b24]" />
+          <span className="tracking-[0.18em] uppercase">GRAMIZOR</span>
+        </a>
       </div>
     </footer>
   );

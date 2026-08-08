@@ -27,6 +27,8 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: wedding.meta.title,
   description: wedding.meta.description,
+  authors: [{ name: "GRAMIZOR", url: "https://gramizor.com" }],
+  creator: "GRAMIZOR",
   openGraph: {
     title: wedding.meta.title,
     description: wedding.meta.description,
